@@ -65,7 +65,7 @@ export default function Skills() {
 
   if (!skillsLoaded) {
     return (
-      <section className="py-12 md:py-20 relative overflow-hidden">
+      <section ref={ref} className="py-12 md:py-20 relative overflow-hidden">
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <div className="text-center mb-8 md:mb-12">
             <div className="animate-pulse">
@@ -91,64 +91,40 @@ export default function Skills() {
   }
 
   return (
-    <section className="py-12 md:py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-fuchsia-950/10 to-transparent pointer-events-none" />
+    <section id="skills" ref={ref} className="py-12">
+      <div className="container mx-auto px-4">
+        <h2 className="text-2xl font-semibold mb-6 text-foreground">
+          Skills
+        </h2>
 
-      <div ref={ref} className="container mx-auto px-4 max-w-5xl relative z-10">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="flex flex-col items-center"
-        >
-          <motion.h2
-            variants={itemVariants}
-            className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-center relative"
-          >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-400 to-blue-500">
-              Skills & Expertise
-            </span>
-            <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-fuchsia-500 to-blue-500"></span>
-          </motion.h2>
-
-          <motion.p
-            variants={itemVariants}
-            className="text-base md:text-lg text-gray-300 text-center max-w-2xl mx-auto mb-8 md:mb-12 px-4"
-          >
-            A comprehensive toolkit of technologies I work with.
-          </motion.p>
-
-          <motion.div variants={containerVariants} className="w-full space-y-8 md:space-y-10">
-            {skillCategories.map((category, idx) => (
-              <motion.div key={idx} variants={itemVariants} className="w-full">
-                <h3 className="text-lg md:text-xl font-semibold mb-4 text-white px-2">{category.name}</h3>
-
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4">
-                  {category.skills.map((skill, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{
-                        duration: isMobile ? 0.3 : 0.4,
-                        delay: isInView ? 0.05 * index : 0,
-                      }}
-                      className="group"
-                    >
-                      <MobileCard className="h-20 md:h-24 flex items-center justify-center p-3 md:p-4 hover:shadow-lg hover:shadow-fuchsia-500/10">
-                        <div className="text-center">
-                          <span className="text-gray-300 group-hover:text-white transition-colors font-medium text-sm md:text-base">
-                            {skill}
-                          </span>
-                        </div>
-                      </MobileCard>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="p-4 rounded-lg border border-gray-200 bg-white text-gray-800">
+             <h3 className="font-medium mb-2">Frontend</h3>
+             <ul className="text-sm space-y-1">
+               <li>React / Next.js</li>
+               <li>Tailwind CSS</li>
+               <li>Framer Motion</li>
+             </ul>
+           </div>
+ 
+          <div className="p-4 rounded-lg border border-gray-200 bg-white text-gray-800">
+             <h3 className="font-medium mb-2">3D / WebGL</h3>
+             <ul className="text-sm space-y-1">
+               <li>Three.js</li>
+               <li>@react-three/fiber</li>
+               <li>@react-three/drei</li>
+             </ul>
+           </div>
+ 
+          <div className="p-4 rounded-lg border border-gray-200 bg-white text-gray-800">
+             <h3 className="font-medium mb-2">Tools</h3>
+             <ul className="text-sm space-y-1">
+               <li>TypeScript</li>
+               <li>zod</li>
+               <li>ESLint / Prettier</li>
+             </ul>
+           </div>
+         </div>
       </div>
     </section>
   )
