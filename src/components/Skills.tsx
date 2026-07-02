@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, Layout, Server, Container, Database, Wrench } from "lucide-react";
+import { Code, Layout, Server, Container, Database, Wrench, Cpu, Cloud, Brain } from "lucide-react";
 import { skills } from "@/data/projectData";
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -11,6 +11,9 @@ const iconMap: Record<string, React.ReactNode> = {
   container: <Container size={20} />,
   database: <Database size={20} />,
   wrench: <Wrench size={20} />,
+  cpu: <Cpu size={20} />,
+  cloud: <Cloud size={20} />,
+  brain: <Brain size={20} />,
 };
 
 export default function Skills() {

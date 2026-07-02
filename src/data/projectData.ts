@@ -3,11 +3,29 @@ export const skills = {
     title: "Languages",
     icon: "code",
     items: [
-      { name: "Python", icon: "🐍" },
       { name: "C", icon: "⚙️" },
-      { name: "Java", icon: "☕" },
+      { name: "C++", icon: "➕" },
+      { name: "Python", icon: "🐍" },
       { name: "JavaScript", icon: "🟨" },
-      { name: "SQL", icon: "🗃️" },
+    ],
+  },
+  core: {
+    title: "Core CS",
+    icon: "cpu",
+    items: [
+      { name: "Data Structures", icon: "🌳" },
+      { name: "Algorithms", icon: "🔄" },
+      { name: "Operating Systems", icon: "🖥️" },
+      { name: "OOP", icon: "📦" },
+    ],
+  },
+  backend: {
+    title: "Backend",
+    icon: "server",
+    items: [
+      { name: "Node.js", icon: "🟩" },
+      { name: "FastAPI", icon: "⚡" },
+      { name: "Streamlit", icon: "📊" },
     ],
   },
   frontend: {
@@ -16,129 +34,103 @@ export const skills = {
     items: [
       { name: "HTML", icon: "🌐" },
       { name: "CSS", icon: "🎨" },
-      { name: "React", icon: "⚛️" },
-      { name: "Next.js", icon: "▲" },
-    ],
-  },
-  backend: {
-    title: "Backend",
-    icon: "server",
-    items: [
-      { name: "Flask", icon: "🌶️" },
-      { name: "Node.js", icon: "🟩" },
-    ],
-  },
-  devops: {
-    title: "DevOps",
-    icon: "container",
-    items: [
-      { name: "Linux", icon: "🐧" },
-      { name: "Git", icon: "📦" },
-      { name: "GitHub", icon: "🐙" },
-      { name: "Docker", icon: "🐳" },
-      { name: "Kubernetes", icon: "☸️" },
-      { name: "Jenkins", icon: "🔧" },
-      { name: "Terraform", icon: "🏗️" },
-      { name: "AWS", icon: "☁️" },
-      { name: "GitHub Actions", icon: "⚡" },
-      { name: "Nginx", icon: "🌊" },
     ],
   },
   databases: {
     title: "Databases",
     icon: "database",
     items: [
-      { name: "MySQL", icon: "🐬" },
+      { name: "SQL", icon: "🐬" },
+      { name: "MongoDB", icon: "🍃" },
       { name: "Firebase", icon: "🔥" },
+    ],
+  },
+  cloudDevops: {
+    title: "Cloud & DevOps",
+    icon: "cloud",
+    items: [
+      { name: "AWS", icon: "☁️" },
+      { name: "Docker", icon: "🐳" },
+      { name: "CI/CD", icon: "🔄" },
+    ],
+  },
+  machineLearning: {
+    title: "Machine Learning",
+    icon: "brain",
+    items: [
+      { name: "Scikit-learn", icon: "🧠" },
+      { name: "Pandas", icon: "🐼" },
+      { name: "NumPy", icon: "🔢" },
     ],
   },
   tools: {
     title: "Tools",
     icon: "wrench",
     items: [
-      { name: "VS Code", icon: "💻" },
-      { name: "Postman", icon: "📮" },
-      { name: "Figma", icon: "🎯" },
       { name: "Git", icon: "📦" },
-      { name: "Docker Desktop", icon: "🐳" },
+      { name: "GitHub", icon: "🐙" },
+      { name: "VS Code", icon: "💻" },
     ],
   },
 };
 
 export const experiences = [
   {
-    title: "Final Year CSE Student",
-    company: "University",
+    title: "B.Tech in Computer Science and Engineering",
+    company: "SRM Institute of Science and Technology, Trichy",
     period: "2022 - 2026",
-    description:
-      "Pursuing Computer Science Engineering with focus on DevOps, Cloud Computing, and Full-Stack Development.",
+    description: "CGPA: 8.40 / 10",
     type: "education" as const,
   },
   {
-    title: "Open Source Contributor",
-    company: "GitHub",
-    period: "2024 - Present",
-    description:
-      "Contributing to open-source projects, documenting learning journeys (Linux, Docker, Git), and building public portfolios of technical knowledge.",
+    title: "Research: AR/VR Applications",
+    company: "Academic Research",
+    period: "Present",
+    description: "Explored applications of AR/VR in healthcare diagnostics and engineering simulations. Analyzed impact on modeling, training, and immersive learning systems.",
     type: "experience" as const,
   },
   {
-    title: "Student Leader",
-    company: "Student Council",
-    period: "2023 - 2024",
-    description:
-      "Led technical events, organized workshops on web development and cloud computing, mentored junior students.",
+    title: "Secretary – Clubs and Cultural Activities",
+    company: "SRM IST",
+    period: "Active",
+    description: "Coordinated and executed 40+ technical and cultural events. Demonstrated leadership, teamwork, and communication skills.",
     type: "leadership" as const,
   },
 ];
 
 export const projects = [
   {
-    title: "AI Reverse Classroom",
-    description:
-      "An AI-powered reverse classroom platform that transforms traditional learning with intelligent content generation and student engagement tools.",
-    techStack: ["React", "Node.js", "Python", "AI/ML"],
-    github: "https://github.com/sriramaswamy/ai-reverse-classroom",
+    title: "AI Clinical Risk Assessment Platform",
+    description: "Designed and implemented an end-to-end machine learning system for real-time clinical risk prediction. Optimized model performance using Logistic Regression, Random Forest, and XGBoost, and integrated an OCR pipeline for medical data extraction.",
+    techStack: ["Python", "FastAPI", "Scikit-learn", "XGBoost", "OCR"],
+    github: "https://github.com/Sriramaswamysenthildevan",
     live: "",
     image: "",
     featured: true,
   },
   {
-    title: "HealthSense",
-    description:
-      "Disease prediction system using Machine Learning with OCR-based medical report analysis and Flask backend.",
-    techStack: ["Python", "ML", "OCR", "Flask"],
-    github: "https://github.com/sriramaswamy/healthsense",
+    title: "Adaptive AI Learning Platform",
+    description: "Developed a personalized learning system with progress tracking and a recommendation engine. Implemented backend APIs for adaptive content delivery and integrated cloud-based services for scalable deployment.",
+    techStack: ["Node.js", "Python", "Cloud Services", "API"],
+    github: "https://github.com/Sriramaswamysenthildevan",
     live: "",
     image: "",
     featured: true,
   },
   {
-    title: "Git & GitHub Learning",
-    description:
-      "100 days of comprehensive Git and GitHub documentation — commands, workflows, branching strategies, and best practices.",
-    techStack: ["Git", "GitHub", "Markdown", "Documentation"],
-    github: "https://github.com/sriramaswamy/git-github-learning",
+    title: "Real-Time Collaborative Notes",
+    description: "Built a real-time distributed application supporting multi-user synchronization. Implemented concurrency handling, data consistency across clients, and role-based authentication with version control.",
+    techStack: ["JavaScript", "Node.js", "WebSockets", "Databases"],
+    github: "https://github.com/Sriramaswamysenthildevan",
     live: "",
     image: "",
     featured: false,
   },
   {
-    title: "Linux Learning",
-    description:
-      "Structured learning repository covering Linux commands, shell scripting, file management, and system administration.",
-    techStack: ["Linux", "Bash", "Shell", "Documentation"],
-    github: "https://github.com/sriramaswamy/linux-learning",
-    live: "",
-    image: "",
-    featured: false,
-  },
-  {
-    title: "Docker Learning",
-    description:
-      "Hands-on Docker learning: containers, images, compose, networking, volumes, and real-world deployment scenarios.",
-    techStack: ["Docker", "Docker Compose", "Containers"],
-    github: "https://github.com/sriramaswamy/docker-learning",
+    title: "Serverless Cloud App with CI/CD",
+    description: "Developed a scalable backend using AWS Lambda and API Gateway. Designed an event-driven architecture for efficient request handling and automated the CI/CD pipeline using GitHub Actions.",
+    techStack: ["AWS Lambda", "API Gateway", "GitHub Actions", "Event-Driven"],
+    github: "https://github.com/Sriramaswamysenthildevan",
     live: "",
     image: "",
     featured: false,
@@ -146,10 +138,8 @@ export const projects = [
 ];
 
 export const certifications = [
-  { name: "Linux Essentials", issuer: "Linux Professional Institute", icon: "🐧" },
-  { name: "Docker Fundamentals", issuer: "Docker Inc.", icon: "🐳" },
-  { name: "AWS Cloud Practitioner", issuer: "Amazon Web Services", icon: "☁️" },
-  { name: "GitHub Foundations", issuer: "GitHub", icon: "🐙" },
-  { name: "Google IT Support", issuer: "Google / Coursera", icon: "🔍" },
-  { name: "Cisco Networking", issuer: "Cisco", icon: "🌐" },
+  { name: "AWS Academy Cloud Foundations", issuer: "Amazon Web Services", icon: "☁️" },
+  { name: "MongoDB Fundamentals", issuer: "MongoDB", icon: "🍃" },
+  { name: "IBM Data Science Tools", issuer: "IBM", icon: "🔍" },
+  { name: "ServiceNow Fundamentals", issuer: "ServiceNow", icon: "⚙️" },
 ];

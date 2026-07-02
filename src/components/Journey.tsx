@@ -232,6 +232,18 @@ export default function Journey() {
       70
     );
 
+    // Prompt user interaction
+    await sleep(400);
+    await outputAnimated(
+      [
+        "",
+        "🚀 System Initialization Complete.",
+        "💡 Type 'help' to see all available commands, or 'hire' to view my resume.",
+        "",
+      ],
+      50
+    );
+
     if (!mountedRef.current) return;
     setHasBooted(true);
     setIsBooting(false);
@@ -704,15 +716,6 @@ export default function Journey() {
                   <span className="text-green-400 whitespace-pre">
                     {PROMPT}
                   </span>
-                  <span className="text-zinc-100">{input}</span>
-                  <span
-                    className={`text-purple-400 transition-opacity duration-100 ${
-                      cursorVisible ? "opacity-100" : "opacity-0"
-                    }`}
-                  >
-                    ▌
-                  </span>
-                  {/* Hidden input for keyboard capture (desktop) */}
                   <input
                     ref={inputRef}
                     type="text"
@@ -722,12 +725,14 @@ export default function Journey() {
                       setHistoryIndex(-1);
                     }}
                     onKeyDown={handleKeyDown}
-                    className="absolute opacity-0 pointer-events-none -z-10 w-[1px] h-[1px]"
+                    className="flex-1 bg-transparent border-0 outline-none text-zinc-100 p-0 ml-1 shadow-none focus:ring-0"
+                    style={{ caretColor: "rgb(192 132 252)" }}
                     aria-label="Terminal command input"
                     autoComplete="off"
                     autoCapitalize="off"
                     autoCorrect="off"
                     spellCheck={false}
+                    autoFocus
                   />
                 </div>
               )}
@@ -740,34 +745,7 @@ export default function Journey() {
               )}
             </div>
 
-            {/* ── Mobile input bar ────────────────────── */}
-            {isInteractive && (
-              <div className="flex items-center gap-2 px-4 py-3 border-t border-white/[0.06] bg-white/[0.02] sm:hidden">
-                <span className="text-green-400 text-xs font-mono shrink-0">
-                  $
-                </span>
-                <input
-                  ref={mobileInputRef}
-                  type="text"
-                  value={input}
-                  onChange={(e) => {
-                    setInput(e.target.value);
-                    setHistoryIndex(-1);
-                  }}
-                  onKeyDown={handleKeyDown}
-                  placeholder="Type a command..."
-                  className="flex-1 bg-transparent text-white text-sm outline-none placeholder-zinc-600"
-                  style={{
-                    fontFamily:
-                      "var(--font-jetbrains-mono), 'JetBrains Mono', monospace",
-                  }}
-                  autoComplete="off"
-                  autoCapitalize="off"
-                  autoCorrect="off"
-                  spellCheck={false}
-                />
-              </div>
-            )}
+            {/* Mobile input bar has been removed as the main input is now fully functional natively. */}
           </div>
         </motion.div>
 
