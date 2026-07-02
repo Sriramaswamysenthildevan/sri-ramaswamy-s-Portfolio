@@ -55,6 +55,12 @@ export default function Journey() {
     mountedRef.current = true;
     return () => {
       mountedRef.current = false;
+      bootStartedRef.current = false;
+      setLines([]);
+      setTypingText("");
+      setIsBooting(false);
+      setHasBooted(false);
+      setIsInteractive(false);
     };
   }, []);
 
@@ -82,9 +88,7 @@ export default function Journey() {
   const sleep = useCallback(
     (ms: number) =>
       new Promise<void>((resolve) => {
-        setTimeout(() => {
-          if (mountedRef.current) resolve();
-        }, ms);
+        setTimeout(resolve, ms);
       }),
     []
   );
@@ -597,7 +601,7 @@ export default function Journey() {
   // ─── Render ───────────────────────────────────────────
   return (
     <section
-      id="journey"
+      id="terminal"
       ref={sectionRef}
       className="relative py-24 sm:py-32"
     >
@@ -718,7 +722,7 @@ export default function Journey() {
                       setHistoryIndex(-1);
                     }}
                     onKeyDown={handleKeyDown}
-                    className="sr-only"
+                    className="absolute opacity-0 pointer-events-none -z-10 w-[1px] h-[1px]"
                     aria-label="Terminal command input"
                     autoComplete="off"
                     autoCapitalize="off"
