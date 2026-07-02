@@ -8,14 +8,14 @@ export const siteConfig = {
   about:
     "I am a Final Year Computer Science Engineering student passionate about DevOps, Cloud Computing and Automation. I enjoy building real-world projects, learning Linux, Docker, Kubernetes and AWS while documenting my journey publicly. My goal is to become a world-class DevOps Engineer and eventually build technology companies that solve meaningful problems.",
   location: "India",
-  email: "senthildevan@example.com",
+  email: "sriramaswamyworks@gmail.com",
   resumeUrl: "/resume.pdf",
 };
 
 export const socialLinks = {
-  github: "https://github.com/sriramaswamy",
-  linkedin: "https://linkedin.com/in/sriramaswamy",
-  instagram: "https://instagram.com/sriramaswamy",
+  github: "https://github.com/Sriramaswamysenthildevan",
+  linkedin: "https://www.linkedin.com/in/sriramaswamy-senthil-devan-056544250/",
+  instagram: "https://www.instagram.com/adthiya_____sriramaswamy/",
 };
 
 export const navItems = [
